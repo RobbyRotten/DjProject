@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.index),
     re_path(r'^about', views.about),
     re_path(r'^contacts', views.contacts),
-    re_path(r'user/id(?P<user_id>\d+)', views.users),
+    re_path(r'user/id(?P<user_id>\w+)', views.users),
+    path('groups/', views.groups),
 ]
