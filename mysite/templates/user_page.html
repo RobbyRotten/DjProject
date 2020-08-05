@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+    <title>User page</title>
+</head>
+<body>
+    <h2>User id{{user_id}}'s page</h2>
+    <h3>Hello, my name's {{name}}</h3>
+    <h4>Country: {{country}}</h4>
+    <h4>City: {{city}}</h4>
+    <h4>Interests: {{interests}}</h4>
+    <h4>Occupation: {{occupation}}</h4>
+</body>
+</html>

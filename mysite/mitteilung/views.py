@@ -18,7 +18,17 @@ def contacts(request):
 def users(request, user_id):
     try:
         i = int(user_id)
-        return HttpResponse("<h2>User id{}'s page</h2>".format(user_id))
+        data = {'user_id': user_id}
+        if i == 1:
+            user_info = {'user_id': user_id,
+                         'name': 'Mad Max',
+                         'country': 'Russia',
+                         'city': 'Moscow',
+                         'interests': 'science, programming, science fiction',
+                         'occupation': 'ex-student, programmer'}
+            return render(request, 'user_page.html', context=user_info)
+        else:
+            return HttpResponse("<h2>User id{}'s page</h2>".format(user_id))
     except ValueError:
         return HttpResponseNotFound("<h2>Unavaiable user id '{}'</h2>".format(user_id))
 
